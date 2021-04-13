@@ -17,6 +17,7 @@ RUN curl https://getcomposer.org/installer > composer-setup.php && php composer-
 RUN mkdir /usr/src/app
 COPY ./install.sh /usr/src/app
 COPY ./docker-php-magento2.ini "$PHP_INI_DIR/conf.d/"
+RUN rm /etc/nginx/sites-available/*
 COPY ./magento /etc/nginx/sites-enabled
 COPY ./magento /etc/nginx/sites-available
 
