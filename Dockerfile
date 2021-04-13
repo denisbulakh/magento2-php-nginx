@@ -22,7 +22,7 @@ COPY ./magento /etc/nginx/sites-available
 
 RUN mv "$PHP_INI_DIR/php.ini-development" "$PHP_INI_DIR/php.ini"
 
-EXPOSE 80 9000
+EXPOSE 9000
 
 WORKDIR /usr/src/app
 
