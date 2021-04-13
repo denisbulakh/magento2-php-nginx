@@ -12,7 +12,7 @@ services:
       - magento2-db
       - magento2-elasticsearch
     ports:
-      - "8080:80"
+      - "8000:80"
       - "9000:9000"
   magento2-db:
     image: mariadb:10.4
