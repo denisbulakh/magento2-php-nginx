@@ -6,8 +6,6 @@ services:
       dockerfile: ./Dockerfile
     image: magento2-php-nginx
     container_name: magento2-app
-#    volumes:
-#      - ./:/usr/src/app
     links:
       - magento2-db
       - magento2-elasticsearch
@@ -17,16 +15,11 @@ services:
   magento2-db:
     image: mariadb:10.4
     container_name: magento2_db
-    ports:
-      - "3306:3306"
     environment:
       MYSQL_DATABASE: magento2_db
       MYSQL_ROOT_PASSWORD: test
   magento2-elasticsearch:
     image: elasticsearch:7.6.2
     container_name: magento2-elasticsearch
-    ports:
-      - "9200:9200"
-      - "9300:9300"
     environment:
       - discovery.type=single-node
